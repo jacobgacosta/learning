@@ -1,0 +1,34 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.4.RELEASE")
+    }
+}
+
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id 'org.springframework.boot' version "2.0.4.RELEASE"
+    id 'io.spring.dependency-management' version "1.0.6.RELEASE"
+}
+
+bootJar {
+    baseName = 'gs-spring-boot'
+    version = '0.1.0'
+}   
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    testCompile 'junit:junit'
+}
